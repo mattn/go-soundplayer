@@ -23,7 +23,7 @@ func Play(filename string) error {
 		uintptr(unsafe.Pointer(syscall.StringToUTF16Ptr(filename))),
 		0,
 		SND_SYNC|SND_NODEFAULT|SND_FILENAME)
-	if r0 == 0 && err != nil {
+	if r0 != 0 && err != nil {
 		return err
 	}
 	return nil
